@@ -1,70 +1,137 @@
-# Getting Started with Create React App
+# ⚡ StatCard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Your life. Your stats.**
 
-## Available Scripts
+A game-style personal stats website where you can track and compare your real-world stats across Sports, Finance, Political Power, and Education — like a character sheet for real life.
 
-In the project directory, you can run:
+🔗 **Live Site:** [statcard-ashen.vercel.app](https://statcard-ashen.vercel.app)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🎮 What is StatCard?
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+StatCard turns your real-world achievements into a game-style radar chart. Connect your accounts, fill in your stats, and compete on a global leaderboard.
 
-### `npm test`
+Each player gets a stat card with 4 categories:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Category | Stats | Source |
+|----------|-------|--------|
+| 🏃 Sports / Health | Stamina, Strength, Agility, Endurance, Speed, Recovery | Strava API |
+| 💰 Finance / Money | Wealth, Income, Investments, Savings, Assets, Credit | NetWorth Calculator |
+| ⚡ Political / Power | Influence, Reach, Network, Authority, Repute, Alliances | Influence Meter |
+| 🎓 Education / Expertise | IQ, Knowledge, Skills, Creativity, Expertise, Learning | GitHub API |
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## ✅ Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 🔐 Email/password authentication via Supabase
+- 📊 Radar/spider chart for each category
+- 🐙 GitHub integration — auto-calculates Education stats from real repos
+- 🏃 Strava integration — auto-calculates Sports stats from real activities
+- 💰 Finance calculator — estimates wealth score from income, assets, investments
+- ⚡ Influence meter — calculates Political Power from Instagram, LinkedIn, Twitter/X, YouTube
+- 🏆 Global leaderboard with tier rankings (Bronze → Silver → Gold → Legendary)
+- ✅ Verified badges for connected accounts
+- 📱 Mobile responsive
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🛠 Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| Layer | Tech |
+|-------|------|
+| Frontend | React, Tailwind CSS |
+| Backend | Supabase (PostgreSQL + Auth) |
+| Hosting | Vercel |
+| APIs | GitHub API, Strava API |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Cost: ₹0** — everything runs on free tiers.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🚀 Getting Started
 
-## Learn More
+### 1. Clone the repo
+```bash
+git clone https://github.com/allenasat044-prog/statcard.git
+cd statcard
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 2. Install dependencies
+```bash
+npm install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 3. Set up Supabase
+- Create a project at [supabase.com](https://supabase.com)
+- Run the SQL schema (see `schema.sql`)
+- Copy your Project URL and anon key
 
-### Code Splitting
+### 4. Add environment variables
+Create a `.env` file:
+```
+REACT_APP_SUPABASE_URL=your_supabase_url
+REACT_APP_SUPABASE_ANON_KEY=your_anon_key
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 5. Run locally
+```bash
+npm start
+```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📁 Project Structure
 
-### Making a Progressive Web App
+```
+src/
+├── App.js                  # Root component, auth state
+├── Auth.js                 # Login / signup page
+├── StatCard.js             # Main stat card with radar chart
+├── Leaderboard.js          # Global leaderboard
+├── GitHubConnect.js        # GitHub OAuth + stats calculator
+├── StravaConnect.js        # Strava OAuth + stats calculator
+├── FinanceCalculator.js    # 3-step finance estimator
+├── InfluenceCalculator.js  # Social media influence meter
+└── supabaseClient.js       # Supabase client config
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🏆 Tier System
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+| Tier | Score Range |
+|------|-------------|
+| 🟤 Bronze | 0 - 54 |
+| ⚪ Silver | 55 - 69 |
+| 🟡 Gold | 70 - 84 |
+| 🔥 Legendary | 85 - 100 |
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📸 Screenshots
 
-### `npm run build` fails to minify
+> Coming soon
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## 🗺 Roadmap
+
+- [ ] Shareable public profile URLs (`/u/username`)
+- [ ] Animated radar chart on load
+- [ ] Percentile rank by country/region
+- [ ] Weekly stat updates
+- [ ] Mobile app (React Native)
+
+---
+
+## 👤 Author
+
+**Shanks** — [github.com/allenasat044-prog](https://github.com/allenasat044-prog)
+
+---
+
+## 📄 License
+
+MIT License — free to use and modify.
